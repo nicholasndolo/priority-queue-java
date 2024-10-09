@@ -21,10 +21,14 @@ public class PriorityQueue {
     }
 
     public int remove(){
-        if(count == 0)
+        if(isEmpty())
             throw new IllegalStateException();
 
         return items[--count];
+    }
+
+    public boolean isEmpty(){
+        return count == 0;
     }
 
     @Override
