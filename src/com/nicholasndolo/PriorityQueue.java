@@ -7,12 +7,16 @@ public class PriorityQueue {
     private int count;
 
     public void add(int item){
-        if(count == items.length)
+        if(isFull())
             throw new IllegalStateException();
 
         var i = shiftItemsToInsert(item);
         items[i] = item;
         count++;
+    }
+
+    public boolean isFull(){
+        return count == items.length;
     }
 
     public int shiftItemsToInsert(int item){
