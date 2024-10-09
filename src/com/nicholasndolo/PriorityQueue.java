@@ -20,6 +20,13 @@ public class PriorityQueue {
         count++;
     }
 
+    public int remove(){
+        if(count == 0)
+            throw new IllegalStateException();
+
+        return items[--count];
+    }
+
     @Override
     public String toString(){
         return Arrays.toString(items);
